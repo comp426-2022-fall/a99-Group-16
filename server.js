@@ -39,15 +39,27 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(thisDirectory, 'views'));
 
 app.get('/', function(req, res) {
-    res.render('login');
+    if(req.app.get("user")) {
+        res.redirect('/settings');
+    } else {
+        res.redirect('/login');
+    }
 });
 
 app.get('/login', function(req, res) {
-    res.render('login');
+    if(req.app.get("user")) {
+        res.redirect('/settings');
+    } else {
+        res.render('login');
+    }
 });
 
 app.get('/register', function(req, res) {
-    res.render('register');
+    if(req.app.get("user")) {
+        res.redirect('/settings');
+    } else {
+        res.render('register');
+    }
 });
 
 app.post('/login', function(req, res) {
@@ -67,8 +79,6 @@ app.post('/login', function(req, res) {
     const sqlUserCheck = db.prepare(`SELECT * FROM users where username='${username}' and password='${password}';`);
     let row = sqlUserCheck.get();
     if(row === undefined) {
-        req.app.set('user', username);
-        req.app.set('password', password);
         const sqlLogStalelogin = `INSERT INTO logs (username, time, message) VALUES ('${username}', 'stale login', '${rn.toISOString()}');`;
         db.exec(sqlLogStalelogin)
         res.redirect('/stalelogin');
@@ -82,12 +92,10 @@ app.post('/login', function(req, res) {
 });
 
 app.get('/stalelogin', function(req, res){
-    let user = req.app.get('user')
     res.render('stalelogin');
 });
 
 app.post('/register', function(req, res) {
-    console.log(req.body);
     const username = req.body.username;
     const password = req.body.password;
     const email = req.body.email;
