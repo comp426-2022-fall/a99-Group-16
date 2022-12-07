@@ -1,0 +1,23 @@
+{
+  "name": "a99-group-16",
+  "version": "1.0.0",
+  "description": "COMP 426 Final Project: Food wish list",
+  "main": "server.js",
+  "dependencies": {
+    "better-sqlite3": "^8.0.1",
+    "express": "^4.18.2",
+    "minimist": "^1.2.7",
+    "path": "^0.12.7",
+    "url": "^0.11.0"
+  },
+  "scripts": {
+    "test": "node server.js --port=2000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comp426-2022-fall/a99-Group-16.git"
+  },
+  "license": "GPL-3.0-or-later",
+  "homepage": "https://github.com/comp426-2022-fall/a99-Group-16#readme",
+  "type": "module"
+}
