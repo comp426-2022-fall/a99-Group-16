@@ -29,18 +29,19 @@ Please watch our demo video as we clearly demonstrate how the app works[insert l
 
 ## Planning 
 
-Please navigate to this page for information on planning.
+Please navigate [here](https://github.com/comp426-2022-fall/a99-Group-16/blob/main/docs/Planning.md) for information on planning
 
 ## API
 
-Details about this API can be found here.
+Details about this API can be found [here](https://github.com/comp426-2022-fall/a99-Group-16/blob/main/docs/API.md)
 
 ## Endpoints
 
-Find them here 
+Find them [here](https://github.com/comp426-2022-fall/a99-Group-16/blob/main/docs/Endpoints.md) 
 
+## Extensions
 
-
+A few extensions came to mind. Please look over them [here](https://github.com/comp426-2022-fall/a99-Group-16/blob/main/docs/Extensions.md)
 
 
 ## First steps
