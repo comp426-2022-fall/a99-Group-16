@@ -1,13 +1,47 @@
-# a99-Group-16
+# Wishlist to Santa
 Final project Group 16
 
-## Summary 
+## Summary
 
-COMP426 final project template boilerplate.
-All your code and documentation goes here.
-Change this text to be a brief description of your final project.
-Put the name of your project in the header above.
-You will change everything below to be the main technical documentation, as outlined below.
+Wishlist to Santa is an online web app where children can enter their Christmas wishes. Their wishlist will be sent to Santa. Using a username and password, parents can secretly see the items on their child's wishlist. 
+
+## Demo 
+
+Please watch our demo video as we clearly demonstrate how the app works[insert link demo video here]. HO HO HO!
+
+## Setup instructions
+
+1. Clone this repository
+2. Run npm install : This will install all the needed dependincies in our package.json file.
+3. Run npm start
+4. Navigate to the webpage localhost:somenumber/
+5. Control + C to stop the server after entering your wishes!
+
+## Dependencies
+
+1. better-sqlite3
+2. ejs
+3. express
+4. minimist
+5. url
+6. Path
+
+
+## Planning 
+
+Please navigate to this page for information on planning.
+
+## API
+
+Details about this API can be found here.
+
+## Endpoints
+
+Find them here 
+
+
+
+
 
 ## First steps
 
