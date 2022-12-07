@@ -1,0 +1,43 @@
+body {
+    background-color: red;
+}
+/* second background */
+.text-box{
+    width: 85%;
+    height: 85%;
+    background-color: white;
+    position: absolute;
+    top: 60%;
+    left:60%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+    /* Top Header */
+    .text-box h1 {
+        font-size: 50px;
+        color: black;
+        font-family:'Times New Roman', Times, serif;
+    }
+    /* Second header*/
+    .text-box h2 {
+        font-size: 35px;
+        color: green;
+    }
+    /* third header */ 
+    .text-box h3 {
+        font-size: 20px;
+        color: black;
+    }
+    /* password username */
+    .text-box p{
+        font-weight: bold;
+        color: green;
+        font-size: 20px;
+        margin: 10px 0 40px;
+    }
+.login-btn{
+    background: red;
+    padding: 10px 30px;
+    font-size: 12;
+    color: white;
+}
