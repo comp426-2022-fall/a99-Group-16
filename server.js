@@ -40,6 +40,7 @@ function sendEmail(items, to_email) {
 //do we neeed to change the db name too?
 const db = new Database('main.db');
 
+//create tables
 const sqlUserTable = `CREATE TABLE users ( id INTEGER PRIMARY KEY AUTOINCREMENT, username, password, email)`;
 try {
     db.exec(sqlUserTable);
@@ -57,6 +58,8 @@ try {
     db.exec(sqlWishListTable);
 } catch(e) {
 }
+
+
 
 const args = minimist(process.argv.slice(2));
 const port = args.port || 2000;
