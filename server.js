@@ -7,6 +7,7 @@ import {fileURLToPath} from 'url';
 import { url } from 'inspector';
 import nodemailer from 'nodemailer';
 
+// this function sends an email to the designated email address
 function sendEmail(items, to_email) {
     return new Promise((resolve, reject) => {
         var transporter = nodemailer.createTransport({
