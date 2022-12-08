@@ -1,6 +1,7 @@
-# ➟ 𓉞 Introduction to Endpoints.md  
+# $\color[RGB]{215,0,0} ིྀ྇$ $\color[RGB]{66, 215, 245}⁂̊⁑̥$ $\color[RGB]{0, 215, 0}⍋$ Endpoints in $\color[RGB]{212,175,55}Wishlist$ $\color[RGB]{212,175,55}To$ $\color[RGB]{212,175,55}Santa$ $\color[RGB]{0, 215, 0}⍋$ $\color[RGB]{66, 215, 245}⁑̥⁂̊$ $\color[RGB]{215,0,0} ིྀ྇$
+## ➟ 𓉞 Introduction to Endpoints.md  
 This is a list of all the API endpoints when navigating our localhost site. All endpoints enter information into the interactions database log when they recieve input from a given user. All specified user input along with site output that resulted from the given user interaction. The information is put into the interactions database log and is catagorized by interaction types such as an attempted login, stale login, successful login, and also records a users password and user name. All of these records are time stamped, have a description message based on category, and shows the username of the user who produced the given site interaction.
-## Utilized Endpoints in Wishlist To Santa
+## List of Endpoints
 ### *app.get('/', function(req, res))*
 If the given person utilizing our site has an account set up already and is logged in (classified as "user"), they will be redirected to the 'settings' view. If the given person utilizing our site is not classified as a "user", they will be redirected to the 'login' view where they can log in.
 ### *app.get('/login', function(req, res))*
@@ -23,3 +24,4 @@ Allows a user to delete their account from the data base.
 Allows the host of the site to delete logs pertaining to past user interaction from the data base.
 ### *app.get('/view_all_logs', function(req, res))*
 Allows the host of the site to view all logs pertaining to past user interaction from the data base.
+## *app.get('/wishlist', function(req, res))*
