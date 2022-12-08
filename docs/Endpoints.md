@@ -22,7 +22,7 @@ Allows a user to log out of their account and sets 'user', 'pass', 'email' crede
 Allows a user to delete their account from the data base.
 ### *app.get('/deletelogs', function(req, res))*
 Allows the host of the site to delete logs pertaining to past user interaction from the data base.
-### *app.get('/view_all_logs', function(req, res))*
+### Hidden: *app.get('/view_all_logs', function(req, res))*
 Allows the host of the site to view all logs pertaining to past user interaction from the data base.
 ### *app.get('/wishlist', function(req, res))*
 Renders the 'wishlist' view.
