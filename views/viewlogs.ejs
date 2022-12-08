@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Past logs</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <h1>Past logs (chronological order)</h1>
+        <form action="/deletelogs">
+            <input type="submit" value="Delete logs"/>
+        </form>
+        <form action="/">
+            <input type="submit" value="Home"/>
+        </form>
+        <hr>
+        <% data.forEach(function(d) { %>
+            <h2>Username:  <%= d.username %></h2>
+            <h2>Timestamp:</h2>
+            <p> <%= d.time %></p>
+            <h2>Message:</h2>
+            <p> <%= d.message %></p>
+            <hr>
+        <% }); %>
+    </body>
+</html>
