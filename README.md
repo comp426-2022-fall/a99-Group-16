@@ -14,7 +14,7 @@ Please watch our demo video as we clearly demonstrate how the app works[insert l
 1. Clone this repository
 2. Run npm install : This will install all the needed dependincies in our package.json file.
 3. Run npm start
-4. Navigate to the webpage localhost:somenumber/
+4. Navigate to the webpage localhost:2000
 5. Control + C to stop the server after entering your wishes!
 
 ## Dependencies
