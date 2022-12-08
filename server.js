@@ -255,7 +255,7 @@ app.post('/additem', function(req, res) {
             db.exec(b);
         } else {
             let items = row.items + "," + req.body.itemname;
-
+// TODO: hcnage variable names
             const a = `DELETE FROM wishlist WHERE username='${user}';`
             db.exec(a);
 
