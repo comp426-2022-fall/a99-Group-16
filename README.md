@@ -41,7 +41,7 @@ Passcode: kayZ%8Dd
 ## $\color[RGB]{0, 255, 0} Planning$
 
 Information on planning [here](https://github.com/comp426-2022-fall/a99-Group-16/blob/main/docs/Planning.md)
-## $\color[RGB]{255, 0, 0} Endpoints$
+## $\color[RGB]{255, 0, 0} Endpoints$.
 
 Information on endpoints [here](https://github.com/comp426-2022-fall/a99-Group-16/blob/main/docs/Endpoints.md) 
 
