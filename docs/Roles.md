@@ -1,4 +1,4 @@
-# Team Roles
+# *Team Roles* ⚙️📝🛠
 ## <img src = "https://img.shields.io/badge/Front%20End%20Lead-Grant%20Wilson-brightgreen">
 Grant worked on the css file, ejs files, and making sure the views and the rest of the front end was functional and connected to all of the back end work.
 ## <img src = "https://img.shields.io/badge/Back%20End%20Lead-Ron%20Joshi-orange">
