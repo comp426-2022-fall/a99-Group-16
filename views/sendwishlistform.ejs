@@ -2,19 +2,22 @@
 <html>
     <head>
         <title>Send wishlist to Santa!</title>
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="style.css">
     </head>
     
     <body>
+        <div class="text-box">
         <h1>Here's a form to send your wishlist to Santa Claus.</h1>
-        <form method="post" action="/sendwishlist">
+        <form method="post" action="/additem">
             <p>But first, we'll need your parent's email for permission. Then we'll send it to Santa!</p>
             <input type="text" name="parentemail">
-            <input type="submit" value="Submit form to Santa">
+            <input type="submit" value="Submit form to Santa" class="login-btn">
         </form>
-
+    <p>
         <form action="/">
-            <input type="submit" value="Home"/>
+            <input type="submit" value="Home" class="login-btn"/>
         </form>
+    </p>
+    </div>
     </body>
 </html>
