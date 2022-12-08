@@ -34,10 +34,10 @@ Please watch our demo video as we clearly demonstrate how the app works[insert l
 
 Please navigate [here](https://github.com/comp426-2022-fall/a99-Group-16/blob/main/docs/Planning.md) for information on planning
 
-## $\color[RGB]{0, 255, 0} Endpoints$
+## $\color[RGB]{255, 0, 0} Endpoints$
 
 Find them [here](https://github.com/comp426-2022-fall/a99-Group-16/blob/main/docs/Endpoints.md) 
 
-## $\color[RGB]{255, 0, 0} Extensions$
+## $\color[RGB]{0, 255, 0} Extensions$
 
 A few extensions came to mind. Please look over them [here](https://github.com/comp426-2022-fall/a99-Group-16/blob/main/docs/Extensions.md)
