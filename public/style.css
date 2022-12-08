@@ -3,13 +3,12 @@ body {
 }
 /* second background */
 .text-box{
-    width: 85%;
-    height: 85%;
+    width: 80%;
     background-color: white;
     position: absolute;
-    top: 60%;
-    left:60%;
-    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     text-align: center;
 }
     /* Top Header */
