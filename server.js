@@ -7,13 +7,17 @@ import {fileURLToPath} from 'url';
 import { url } from 'inspector';
 import nodemailer from 'nodemailer';
 
+// this function sends an email to the designated email address
 function sendEmail(items, to_email) {
     return new Promise((resolve, reject) => {
         var transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
                 user: 'santagiftsender426@gmail.com',
+                // pleae do not copy this password and use it anywhere else. This project is mainly just to make a santa wishlist
                 pass: 'lfbzoxpkkagzrzjy'
+                // more passwords can be used but this one is used for now. for better security we need
+                // a new file
             }
         });
 
@@ -21,7 +25,7 @@ function sendEmail(items, to_email) {
             from: 'santagiftsender426@gmail.com',
             to: to_email,
             subject: 'Your child wants a gift from Santa!!',
-            text: "Hello! Your child wants a bunch of gifts, and they think we're sending the wish list to Santa.\nIf your kid didn't make the naughty list, get him these gifts:\n"+items+"\nThank you!\nBest,\nCOMP 426 Group 16"
+            text: "Hello! Your child wants a bunch of gifts, and they think we're sending the wish list to Santa.\nIf your kid didn't make the naughty list, get him these gifts:\n\n"+items+"\n\nThank you!\nBest,\nCOMP 426 Group 16"
         }
         transporter.sendMail(mail_configs, function(error, info) {
             if(error) {
@@ -33,6 +37,7 @@ function sendEmail(items, to_email) {
     })
 }
 
+//do we neeed to change the db name too?
 const db = new Database('main.db');
 
 const sqlUserTable = `CREATE TABLE users ( id INTEGER PRIMARY KEY AUTOINCREMENT, username, password, email)`;
@@ -70,6 +75,10 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(thisDirectory, 'views'));
 
 app.get('/', function(req, res) {
+    res.redirect('/app');
+});
+
+app.get('/app', function(req, res) {
     if(req.app.get("user")) {
         res.redirect('/settings');
     } else {
@@ -235,7 +244,7 @@ app.get('/wishlist', function(req, res) {
 
         res.render('wishlist', {data: items});
     } else {
-        res.redirect('/');
+        res.redirect('/app');
     }
 });
 
@@ -261,7 +270,7 @@ app.post('/additem', function(req, res) {
 
         res.redirect('/wishlist');
     } else {
-        res.redirect('/');
+        res.redirect('/app');
     }
 });
 
@@ -275,7 +284,7 @@ app.get('/clearwishlist', function(req, res) {
 
         res.redirect('/wishlist');
     } else {
-        res.redirect('/');
+        res.redirect('/app');
     }
 });
 
@@ -285,7 +294,7 @@ app.get('/sendwishlistform', function(req, res) {
     if(user) {
         res.render('sendwishlistform');
     } else {
-        res.redirect('/');
+        res.redirect('/app');
     }
 });
 
@@ -301,9 +310,10 @@ app.post('/sendwishlist', function(req, res) {
         
         sendEmail(itemString, req.body.parentemail);
 
-        res.redirect('/');
+        res.redirect('/app');
     } else {
-        res.redirect('/');
+        res.redirect('/app');
     }
 });
+
 app.listen(port);
