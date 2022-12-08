@@ -37,6 +37,7 @@ function sendEmail(items, to_email) {
     })
 }
 
+//do we neeed to change the db name too?
 const db = new Database('main.db');
 
 const sqlUserTable = `CREATE TABLE users ( id INTEGER PRIMARY KEY AUTOINCREMENT, username, password, email)`;
