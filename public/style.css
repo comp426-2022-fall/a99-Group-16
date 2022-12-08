@@ -11,29 +11,30 @@ body {
     transform: translate(-50%,-50%);
     text-align: center;
 }
-    /* Top Header */
-    .text-box h1 {
-        font-size: 50px;
-        color: black;
-        font-family:'Times New Roman', Times, serif;
-    }
-    /* Second header*/
-    .text-box h2 {
-        font-size: 35px;
-        color: green;
-    }
-    /* third header */ 
-    .text-box h3 {
-        font-size: 20px;
-        color: black;
-    }
-    /* password username */
-    .text-box p{
-        font-weight: bold;
-        color: green;
-        font-size: 20px;
-        margin: 10px 0 40px;
-    }
+
+/* Top Header */
+.text-box h1 {
+    font-size: 50px;
+    color: black;
+    font-family:'Times New Roman', Times, serif;
+}
+/* Second header*/
+.text-box h2 {
+    font-size: 35px;
+    color: green;
+}
+/* third header */ 
+.text-box h3 {
+    font-size: 20px;
+    color: black;
+}
+/* password username */
+.text-box p{
+    font-weight: bold;
+    color: green;
+    font-size: 20px;
+    margin: 10px 0 40px;
+}
 
  /* login button */
 .login-btn{
