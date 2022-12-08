@@ -86,12 +86,6 @@ app.get('/app', function(req, res) {
     }
 });
 
-app.get('/testemail', function(req, res) {
-    sendEmail()
-    .then(response => res.send(response.message))
-    .catch(error => res.status(500).send(error.message));
-})
-
 app.get('/login', function(req, res) {
     if(req.app.get("user")) {
         res.redirect('/settings');
