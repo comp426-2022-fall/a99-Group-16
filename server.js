@@ -28,8 +28,6 @@ const thisDirectory = path.dirname(thisFile);
 // gets the directory .../a99-Group-16
 
 const app = express();
-var jsonParser = bodyParser.json();
-var urlEncodedParser = bodyParser.urlencoded({ extended: false });
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
@@ -69,23 +67,20 @@ app.post('/login', function(req, res) {
 
     const rn = new Date(Date.now());
 
-    const sqlAddUserLog = `INSERT INTO logs (username, time, message) VALUES ('${username}', 'attempted to login', '${rn.toISOString()}');`;
-    try {
-        db.exec(sqlAddUserLog);
-    } catch(e) {
-        console.log(e);
-    }
+    const sqlLoginLog = `INSERT INTO logs (username, time, message) VALUES ('${username}', '${rn.toISOString()}', 'attempted to login');`;
+    db.exec(sqlLoginLog);
 
-    const sqlUserCheck = db.prepare(`SELECT * FROM users where username='${username}' and password='${password}';`);
+    const sqlUserCheck = db.prepare(`SELECT * FROM users where username='${username}' and password='${password}' and email='${email}';`);
     let row = sqlUserCheck.get();
     if(row === undefined) {
-        const sqlLogStalelogin = `INSERT INTO logs (username, time, message) VALUES ('${username}', 'stale login', '${rn.toISOString()}');`;
+        const sqlLogStalelogin = `INSERT INTO logs (username, time, message) VALUES ('${username}', '${rn.toISOString()}', 'stale login');`;
         db.exec(sqlLogStalelogin)
         res.redirect('/stalelogin');
     } else {
         req.app.set('user', username);
         req.app.set('password', password);
-        const sqlLogGoodLogin = `INSERT INTO logs (username, time, message) VALUES ('${username}', 'stale login', '${rn.toISOString()}');`;
+        req.app.set('email', email);
+        const sqlLogGoodLogin = `INSERT INTO logs (username, time, message) VALUES ('${username}', '${rn.toISOString()}', 'successful login');`;
         db.exec(sqlLogGoodLogin);
         res.redirect('/settings');
     }
@@ -101,37 +96,74 @@ app.post('/register', function(req, res) {
     const email = req.body.email;
 
     const rn = new Date(Date.now());
-    const sqlRegisterAttemptLog = `INSERT INTO logs (username, time, message) VALUES ('${username}', 'tried to create new user', '${rn.toISOString()}');`;
+    const sqlRegisterAttemptLog = `INSERT INTO logs (username, time, message) VALUES ('${username}', '${rn.toISOString()}', 'tried to create new user');`;
     db.exec(sqlRegisterAttemptLog)
 
     const sqlGetUsers = db.prepare(`SELECT * FROM users WHERE username='${username}'`);
     let row = sqlGetUsers.get();
 
-    if (row === undefined) {
+    if (row === undefined && username.length >= 4) {
         const sqlInsertUser = `INSERT INTO users (username, password, email) VALUES ('${username}', '${password}', '${email}');`;
         db.exec(sqlInsertUser)
 
-        const sqlGoodRegister = `INSERT INTO logs (username, time, message) VALUES ('${username}', 'register successful', '${rn.toISOString()}');`;
+        const sqlGoodRegister = `INSERT INTO logs (username, time, message) VALUES ('${username}', '${rn.toISOString()}', 'registration successful');`;
         db.exec(sqlGoodRegister)
         req.app.set('user', username);
         req.app.set('pass', password);
         req.app.set('email', email);
         res.redirect('/settings');
     } else {
-        const sqlBadRegister = `INSERT INTO logs (username, time, message) VALUES ('${username}', 'username taken', '${rn.toISOString()}');`;
+        const sqlBadRegister = `INSERT INTO logs (username, time, message) VALUES ('${username}', '${rn.toISOString()}', 'registration unsuccessful');`;
         db.exec(sqlBadRegister)
-        res.render('usernametaken');
+        res.render('unsuccessfulregister');
     }
 });
 
 app.get('/settings', function(req, res){
+    if(req.app.get("user")) {
+        const rn = new Date(Date.now());
+        let user = req.app.get('user');
+        const sqlWentToSettings = `INSERT INTO logs (username, message, time) VALUES ('${user}', '${rn.toISOString()}', 'went to settings');`;
+        db.exec(sqlWentToSettings);
+        res.render('settings', {user: req.app.get('user'), email: req.app.get('email')});
+    } else {
+        res.redirect('/login');
+    }
+});
+
+app.get('/logout', function(req, res) {
+    let user = req.app.get('user');
     const rn = new Date(Date.now());
-    let user = req.app.get('user')
-    console.log("user is: ")
-    console.log(user);
-    const sqlWentToSettings = `INSERT INTO logs (username, message, time) VALUES ('${user}', 'went to settings', '${rn.toISOString()}');`;
-    db.exec(sqlWentToSettings)
-    res.render('settings', {user: req.app.get('user'), email: req.app.get('email')});
+    if(user) {
+        const sqlLoggedOut = `INSERT INTO logs (username, message, time) VALUES ('${user}', '${rn.toISOString()}', 'successfully logged out');`;
+        db.exec(sqlLoggedOut);
+        req.app.set('user', null);
+        req.app.set('pass', null);
+        req.app.set('email', null);
+        res.redirect('/login');
+    } else {
+        res.redirect('/login');
+    }
+});
+
+app.get('/delete', function(req, res) {
+    let user = req.app.get('user');
+    let password = req.app.get('pass');
+    const rn = new Date(Date.now());
+    if(user) {
+        const sqlDeletedMessage = `INSERT INTO logs (username, time, message) VALUES ('${user}', '${rn.toISOString()}', 'successfully deleted account');`;
+        db.exec(sqlDeletedMessage);
+
+        const sqlDelete = `DELETE FROM users WHERE username='${user}';`
+        db.exec(sqlDelete);
+
+        req.app.set('user', null);
+        req.app.set('pass', null);
+        req.app.set('email', null);
+        res.redirect('/login');
+    } else {
+        res.redirect('/login');
+    }
 });
 
 app.listen(port);
