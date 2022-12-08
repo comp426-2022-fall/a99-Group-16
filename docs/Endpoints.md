@@ -24,4 +24,13 @@ Allows a user to delete their account from the data base.
 Allows the host of the site to delete logs pertaining to past user interaction from the data base.
 ### *app.get('/view_all_logs', function(req, res))*
 Allows the host of the site to view all logs pertaining to past user interaction from the data base.
-## *app.get('/wishlist', function(req, res))*
+### *app.get('/wishlist', function(req, res))*
+Renders the 'wishlist' view.
+### *app.post('/additem', function(req, res))*
+Allows the user to input the name of a gift and on submit, the entry is saved to the user's wishlist.
+### *app.get('/clearwishlist', function(req, res))*
+Allows a user to delete all prior recorded entries on their wishlist.
+### *app.get('/sendwishlistform', function(req, res))*
+Renders the 'sendwishlistform' view.
+### *app.post('/sendwishlist', function(req, res))*
+Function of the kid's wishlist being sent to the parent's entered email address.
