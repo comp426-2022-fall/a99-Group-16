@@ -212,6 +212,7 @@ app.get('/delete', function(req, res) {
     }
 });
 
+//do we need to do this?
 app.get('/deletelogs', function(req, res) {
     const sqlDeleteLogs = `DELETE FROM logs;`;
     db.exec(sqlDeleteLogs);
