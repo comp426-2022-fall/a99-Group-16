@@ -75,6 +75,10 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(thisDirectory, 'views'));
 
 app.get('/', function(req, res) {
+    res.redirect('/app');
+});
+
+app.get('/app', function(req, res) {
     if(req.app.get("user")) {
         res.redirect('/settings');
     } else {
@@ -240,7 +244,7 @@ app.get('/wishlist', function(req, res) {
 
         res.render('wishlist', {data: items});
     } else {
-        res.redirect('/');
+        res.redirect('/app');
     }
 });
 
@@ -266,7 +270,7 @@ app.post('/additem', function(req, res) {
 
         res.redirect('/wishlist');
     } else {
-        res.redirect('/');
+        res.redirect('/app');
     }
 });
 
@@ -280,7 +284,7 @@ app.get('/clearwishlist', function(req, res) {
 
         res.redirect('/wishlist');
     } else {
-        res.redirect('/');
+        res.redirect('/app');
     }
 });
 
@@ -290,7 +294,7 @@ app.get('/sendwishlistform', function(req, res) {
     if(user) {
         res.render('sendwishlistform');
     } else {
-        res.redirect('/');
+        res.redirect('/app');
     }
 });
 
@@ -306,9 +310,9 @@ app.post('/sendwishlist', function(req, res) {
         
         sendEmail(itemString, req.body.parentemail);
 
-        res.redirect('/');
+        res.redirect('/app');
     } else {
-        res.redirect('/');
+        res.redirect('/app');
     }
 });
 
