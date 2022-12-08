@@ -6,6 +6,7 @@
     </head>
 
     <body>
+        <div class="text-box">
         <h1>Past logs (chronological order)</h1>
         <form action="/deletelogs">
             <input type="submit" value="Delete logs"/>
@@ -22,5 +23,6 @@
             <p> <%= d.message %></p>
             <hr>
         <% }); %>
+        </div>
     </body>
 </html>
