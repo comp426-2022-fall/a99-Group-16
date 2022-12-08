@@ -1,4 +1,4 @@
-# Introduction to Endpoints.md
+# ➟ 𓉞 Introduction to Endpoints.md  
 This is a list of all the API endpoints when navigating our localhost site. All endpoints enter information into the interactions database log when they recieve input from a given user. All specified user input along with site output that resulted from the given user interaction. The information is put into the interactions database log and is catagorized by interaction types such as an attempted login, stale login, successful login, and also records a users password and user name. All of these records are time stamped, have a description message based on category, and shows the username of the user who produced the given site interaction.
 ## Utilized Endpoints in Wishlist To Santa
 ### *app.get('/', function(req, res))*
