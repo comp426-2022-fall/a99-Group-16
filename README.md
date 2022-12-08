@@ -17,7 +17,7 @@ Passcode: kayZ%8Dd
 
 ## $\color[RGB]{0, 255, 0} Setup$ $\color[RGB]{0, 255, 0} instructions$
 
-1. Using terminal, cd into the directory you plan on cloning the repository in.
+1. Using terminal, cd into the directory you plan on cloning the repository in
 2. Clone this repository by running 'git clone [insert your copied repository code url]'
 3. Run 'npm install' : This will install all the needed dependincies defined in the package.json file.
 4. Run 'npm start'
