@@ -9,7 +9,10 @@ Wishlist to Santa is an online web app where children can enter their Christmas 
 
 ## $\color[RGB]{255, 0, 0} Demo$ 
 
-Please watch our demo video as we clearly demonstrate how the app works[insert link demo video here]. HO HO HO!
+Please watch our demo video as we clearly demonstrate how the app works:
+*Link:* https://unc.zoom.us/rec/share/xesLBAreZlqqp-dRvg-mqnROQJoj-sQAP8nwT9C8rIeuX1vW-abO_cD-AKGylrhM.rmc-yQt3bfzyLyeC 
+*Passcode:* kayZ%8Dd
+HO HO HO!
 
 ## $\color[RGB]{0, 255, 0} Setup$ $\color[RGB]{0, 255, 0} instructions$
 
