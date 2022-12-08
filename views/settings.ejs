@@ -12,20 +12,19 @@
         <h2>Your username is:</h2>
         <%- user -%>
     
-        <h2>Your email is:</h2>
-        <%- email -%>
+<p>
+
+</p>
+        <form action = "/sendwishlistform">
+            <input type="submit" value="Make a wish" class="login-btn">
+        </form>
 
         <form action="/delete">
-            <input type="submit" value="Delete account"/>
+            <input type="submit" value="Delete account" class="login-btn"/>
         </form>
 
         <form action="/logout">
-            <input type="submit" value="Log out"/>
-        </form>
-
-
-        <form action="/view_all_logs">
-            <input type="submit" value="View all logs"/>
+            <input type="submit" value="Log out" class="login-btn"/>
         </form>
     </div>
     </body>

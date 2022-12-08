@@ -1,5 +1,5 @@
-# $\color[RGB]{255, 0, 0} ｡❅⋆⍋$ $\color[RGB]{255, 0, 0}Wishlist$ $\color[RGB]{255, 0, 0} to$ $\color[RGB]{255, 0, 0} Santa$ $\color[RGB]{255, 0, 0} ⍋⋆❅｡$ 
-$\color[RGB]{255, 0, 0} Final$ $\color[RGB]{255, 0, 0} project$ $\color[RGB]{255, 0, 0} Group$ $\color[RGB]{255, 0, 0} 16$ $\color[RGB]{255, 0, 0} 𐂂$
+# $\color[RGB]{212,175,55}Wishlist$ $\color[RGB]{212,175,55} to$ $\color[RGB]{212,175,55} Santa$ $\color[RGB]{123, 63, 0}𐂂$ $\color[RGB]{255, 0, 0}*$
+$\color[RGB]{255, 0, 0} Final$ $\color[RGB]{255, 0, 0} project$ $\color[RGB]{255, 0, 0} Group$ $\color[RGB]{255, 0, 0} 16$
 
 <img src = "https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" /> <img src = "https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white" /> <img src = "https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" /> <img src = "https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white" /> <img src = "https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" />
 
@@ -9,7 +9,11 @@ Wishlist to Santa is an online web app where children can enter their Christmas 
 
 ## $\color[RGB]{255, 0, 0} Demo$ 
 
-Please watch our demo video as we clearly demonstrate how the app works[insert link demo video here]. HO HO HO!
+*Please watch our demo video as we clearly demonstrate how the app works:*
+
+Click [here](https://unc.zoom.us/rec/share/xesLBAreZlqqp-dRvg-mqnROQJoj-sQAP8nwT9C8rIeuX1vW-abO_cD-AKGylrhM.rmc-yQt3bfzyLyeC) to view Demo
+
+Passcode: kayZ%8Dd
 
 ## $\color[RGB]{0, 255, 0} Setup$ $\color[RGB]{0, 255, 0} instructions$
 
@@ -32,16 +36,17 @@ Please watch our demo video as we clearly demonstrate how the app works[insert l
 
 ## $\color[RGB]{0, 255, 0} Planning$
 
-Please navigate [here](https://github.com/comp426-2022-fall/a99-Group-16/blob/main/docs/Planning.md) for information on planning
+Information on planning [here](https://github.com/comp426-2022-fall/a99-Group-16/blob/main/docs/Planning.md)
+## $\color[RGB]{255, 0, 0} Endpoints$
 
-## $\color[RGB]{255, 0, 0} API$
+Information on endpoints [here](https://github.com/comp426-2022-fall/a99-Group-16/blob/main/docs/Endpoints.md) 
 
-Details about this API can be found [here](https://github.com/comp426-2022-fall/a99-Group-16/blob/main/docs/API.md)
+## $\color[RGB]{0, 255, 0} Extensions$
 
-## $\color[RGB]{0, 255, 0} Endpoints$
+Information on future extensions [here](https://github.com/comp426-2022-fall/a99-Group-16/blob/main/docs/Extensions.md)
 
-Find them [here](https://github.com/comp426-2022-fall/a99-Group-16/blob/main/docs/Endpoints.md) 
+## $\color[RGB]{255, 0, 0} Roles$
+Information on team roles [here](https://github.com/comp426-2022-fall/a99-Group-16/blob/main/docs/Roles.md)
 
-## $\color[RGB]{255, 0, 0} Extensions$
-
-A few extensions came to mind. Please look over them [here](https://github.com/comp426-2022-fall/a99-Group-16/blob/main/docs/Extensions.md)
+## $\color[RGB]{0, 255, 0} License$
+GPL-3.0-or-later

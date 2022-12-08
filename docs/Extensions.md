@@ -1,5 +1,4 @@
-## Future extensions
-
+## $\color[RGB]{66, 215, 245}⁂̊⁑̥$ $\color[RGB]{0, 215, 0}⍋$ $\color[RGB]{66, 215, 245}·͙̥‧̩̥•̥̩̥͙‧̩̥$ *Future Extensions* $\color[RGB]{66, 215, 245}‧̩̥•̥̩̥͙‧̩̥·͙̥̣$ $\color[RGB]{0, 215, 0}⍋$ $\color[RGB]{66, 215, 245}⁑̥⁂̊$ 
 *1.* The kid's Christmas wish list is currently saved in a database for parents to access with their login, but in the future we want the kid's wishlist to automatically be sent to the parents email inbox on submit of the list.
 
 *2.* If a given parent has more than one kid, adding a view page where you can access each children's list through designated 'child name' tabs would be a convienent tool for parents to have for easy access.
