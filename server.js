@@ -25,7 +25,7 @@ function sendEmail(items, to_email) {
             from: 'santagiftsender426@gmail.com',
             to: to_email,
             subject: 'Your child wants a gift from Santa!!',
-            text: "Hello! Your child wants a bunch of gifts, and they think we're sending the wish list to Santa.\nIf your kid didn't make the naughty list, get him these gifts:\n"+items+"\nThank you!\nBest,\nCOMP 426 Group 16"
+            text: "Hello! Your child wants a bunch of gifts, and they think we're sending the wish list to Santa.\nIf your kid didn't make the naughty list, get him these gifts:\n\n"+items+"\n\nThank you!\nBest,\nCOMP 426 Group 16"
         }
         transporter.sendMail(mail_configs, function(error, info) {
             if(error) {
