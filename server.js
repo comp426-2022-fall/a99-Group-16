@@ -14,6 +14,7 @@ function sendEmail(items, to_email) {
             service: 'gmail',
             auth: {
                 user: 'santagiftsender426@gmail.com',
+                // pleae do not copy this password and use it anywhere else. This project is mainly just to make a santa wishlist
                 pass: 'lfbzoxpkkagzrzjy'
             }
         });
