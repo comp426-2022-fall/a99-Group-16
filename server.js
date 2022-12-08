@@ -5,6 +5,33 @@ import path from 'path';
 import Database from 'better-sqlite3';
 import {fileURLToPath} from 'url';
 import { url } from 'inspector';
+import nodemailer from 'nodemailer';
+
+function sendEmail(items, to_email) {
+    return new Promise((resolve, reject) => {
+        var transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: 'santagiftsender426@gmail.com',
+                pass: 'lfbzoxpkkagzrzjy'
+            }
+        });
+
+        const mail_configs = {
+            from: 'santagiftsender426@gmail.com',
+            to: to_email,
+            subject: 'Your child wants a gift from Santa!!',
+            text: "Hello! Your child wants a bunch of gifts, and they think we're sending the wish list to Santa.\nIf your kid didn't make the naughty list, get him these gifts:\n"+items+"\nThank you!\nBest,\nCOMP 426 Group 16"
+        }
+        transporter.sendMail(mail_configs, function(error, info) {
+            if(error) {
+                console.log(error);
+                return reject({message: "error"});
+            }
+            return resolve({message: "Email sent"});
+        });
+    })
+}
 
 const db = new Database('main.db');
 
@@ -17,6 +44,12 @@ try {
 const sqlLogTable = `CREATE TABLE logs ( id INTEGER PRIMARY KEY AUTOINCREMENT, username, time, message)`;
 try {
     db.exec(sqlLogTable);
+} catch(e) {
+}
+
+const sqlWishListTable = `CREATE TABLE wishlist (username, items)`;
+try {
+    db.exec(sqlWishListTable);
 } catch(e) {
 }
 
@@ -43,6 +76,12 @@ app.get('/', function(req, res) {
         res.redirect('/login');
     }
 });
+
+app.get('/testemail', function(req, res) {
+    sendEmail()
+    .then(response => res.send(response.message))
+    .catch(error => res.status(500).send(error.message));
+})
 
 app.get('/login', function(req, res) {
     if(req.app.get("user")) {
@@ -158,6 +197,9 @@ app.get('/delete', function(req, res) {
         const sqlDelete = `DELETE FROM users WHERE username='${user}';`
         db.exec(sqlDelete);
 
+        const a = `DELETE FROM wishlist WHERE username='${user}';`
+        db.exec(a);
+
         req.app.set('user', null);
         req.app.set('pass', null);
         req.app.set('email', null);
@@ -179,4 +221,89 @@ app.get('/view_all_logs', function(req, res) {
     res.render('viewlogs', {data: data});
 });
 
+app.get('/wishlist', function(req, res) {
+    let user = req.app.get('user');
+    
+    if(user) {
+        const sqlGetItemsRow1 = db.prepare(`SELECT * FROM wishlist WHERE username='${user}'`);
+        let row = sqlGetItemsRow1.get();
+        let items = [];
+        if(row === undefined) {
+        } else {
+            items = row.items.split(",");
+        }
+
+        res.render('wishlist', {data: items});
+    } else {
+        res.redirect('/');
+    }
+});
+
+app.post('/additem', function(req, res) {
+    let user = req.app.get('user');
+
+    if(user) {
+        const sqlGetItemsRow1 = db.prepare(`SELECT * FROM wishlist WHERE username='${user}'`);
+        let row = sqlGetItemsRow1.get();
+
+        if(row === undefined || row.items === undefined) {
+            const b = `INSERT INTO wishlist (username, items) VALUES ('${user}', '${req.body.itemname}');`;
+            db.exec(b);
+        } else {
+            let items = row.items + "," + req.body.itemname;
+
+            const a = `DELETE FROM wishlist WHERE username='${user}';`
+            db.exec(a);
+
+            const b = `INSERT INTO wishlist (username, items) VALUES ('${user}', '${items}');`;
+            db.exec(b);
+        }
+
+        res.redirect('/wishlist');
+    } else {
+        res.redirect('/');
+    }
+});
+
+
+app.get('/clearwishlist', function(req, res) {
+    let user = req.app.get('user');
+
+    if(user) {
+        const a = `DELETE FROM wishlist WHERE username='${user}';`
+        db.exec(a);
+
+        res.redirect('/wishlist');
+    } else {
+        res.redirect('/');
+    }
+});
+
+app.get('/sendwishlistform', function(req, res) {
+    let user = req.app.get('user');
+
+    if(user) {
+        res.render('sendwishlistform');
+    } else {
+        res.redirect('/');
+    }
+});
+
+app.post('/sendwishlist', function(req, res) {
+    let user = req.app.get('user');
+
+    if(user) {
+        const sqlGetItemsRow1 = db.prepare(`SELECT * FROM wishlist WHERE username='${user}'`);
+        let row = sqlGetItemsRow1.get();
+        const items = row.items.split(",");
+
+        let itemString = items.join(", ");
+        
+        sendEmail(itemString, req.body.parentemail);
+
+        res.redirect('/');
+    } else {
+        res.redirect('/');
+    }
+});
 app.listen(port);
