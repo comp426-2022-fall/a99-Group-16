@@ -43,3 +43,6 @@ Information on future extensions [here](https://github.com/comp426-2022-fall/a99
 
 ## $\color[RGB]{255, 0, 0} Roles$
 Information on team roles [here](https://github.com/comp426-2022-fall/a99-Group-16/blob/main/docs/Roles.md)
+
+## $\color[RGB]{0, 255, 0} License$
+GPL-3.0-or-later
