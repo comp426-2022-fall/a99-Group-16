@@ -1,5 +1,5 @@
-# $\color[RGB]{255, 0, 0} ｡❅⋆⍋$ $\color[RGB]{255, 0, 0}Wishlist$ $\color[RGB]{255, 0, 0} to$ $\color[RGB]{255, 0, 0} Santa$ $\color[RGB]{255, 0, 0} ⍋⋆❅｡$ 
-$\color[RGB]{255, 0, 0} Final$ $\color[RGB]{255, 0, 0} project$ $\color[RGB]{255, 0, 0} Group$ $\color[RGB]{255, 0, 0} 16$ $\color[RGB]{255, 0, 0} 𐂂$
+# $\color[RGB]{212,175,55}Wishlist$ $\color[RGB]{212,175,55} to$ $\color[RGB]{212,175,55} Santa$ $\color[RGB]{123, 63, 0}𐂂$ $\color[RGB]{255, 0, 0}*$
+$\color[RGB]{255, 0, 0} Final$ $\color[RGB]{255, 0, 0} project$ $\color[RGB]{255, 0, 0} Group$ $\color[RGB]{255, 0, 0} 16$
 
 <img src = "https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" /> <img src = "https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white" /> <img src = "https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" /> <img src = "https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white" /> <img src = "https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" />
 
