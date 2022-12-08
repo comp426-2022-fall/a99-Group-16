@@ -5,11 +5,7 @@ $\color[RGB]{255, 0, 0} Final$ $\color[RGB]{255, 0, 0} project$ $\color[RGB]{255
 
 ## $\color[RGB]{0, 255, 0} Summary$
 
-<<<<<<< HEAD
-Wishlist to Santa is an online web app where children can enter their Christmas wishes. Their wishlist will be sent to Santa. Using a username and password, parents can secretly see the items that are on their child's wishlist. 
-=======
-Wishlist to Santa is an online web app where children can enter their Christmas wishes. Their wishlist will be sent to Santa. Using a username and password, parents can secretly see the items on their child's wishlist.
->>>>>>> d01f299b42331bd419f3850ec2f661cde6d1435e
+Wishlist to Santa is an online web app where children can enter their Christmas wishes. Their wishlist will be sent to Santa. Using a username and password, parents can secretly see the items that are on their child's wishlist.
 
 ## $\color[RGB]{255, 0, 0} Demo$ 
 
